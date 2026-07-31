@@ -100,11 +100,27 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Map placeholder */}
-              <div className="bg-[#0F1F4B] rounded-2xl overflow-hidden h-48 flex items-center justify-center">
-                <div className="text-center text-white/60">
-                  <MapPin size={32} className="mx-auto mb-2" />
-                  <p className="text-sm">Norge</p>
+              {/* Map */}
+              <div className="bg-[#0F1F4B] rounded-2xl overflow-hidden h-48 relative">
+                {/* Simplified Norway outline SVG */}
+                <svg viewBox="0 0 200 260" className="absolute inset-0 w-full h-full opacity-10" fill="white">
+                  <path d="M100,10 L120,30 L130,60 L125,90 L140,110 L135,140 L150,160 L145,190 L130,210 L110,230 L90,240 L70,230 L60,210 L55,180 L65,160 L60,140 L70,120 L65,100 L75,80 L70,50 L80,30 Z" />
+                </svg>
+
+                {/* Bergen marker */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative">
+                    {/* Pulse ring */}
+                    <div className="absolute inset-0 w-8 h-8 -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 rounded-full bg-[#F59E0B]/40 animate-ping" />
+                    {/* Dot */}
+                    <div className="relative flex flex-col items-center gap-1.5">
+                      <div className="w-4 h-4 bg-[#F59E0B] rounded-full border-2 border-white shadow-lg" />
+                      <div className="bg-white/15 backdrop-blur-sm rounded-lg px-3 py-1.5 flex items-center gap-1.5">
+                        <MapPin size={13} className="text-[#F59E0B]" />
+                        <span className="text-white text-xs font-bold">Bergen, Norge</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>

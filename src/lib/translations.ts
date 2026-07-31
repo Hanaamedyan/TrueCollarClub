@@ -118,7 +118,7 @@ export const t = {
         email: { label: "E-post", value: "hei@truecollarclub.no" },
         phone: { label: "Telefon", value: "+47 000 00 000" },
         hours: { label: "Åpningstider", value: "Man–Fre: 09–17" },
-        location: { label: "Sted", value: "Norge" },
+        location: { label: "Sted", value: "Bergen, Norge" },
       },
     },
     footer: {
@@ -257,7 +257,7 @@ export const t = {
         email: { label: "Email", value: "hello@truecollarclub.no" },
         phone: { label: "Phone", value: "+47 000 00 000" },
         hours: { label: "Hours", value: "Mon–Fri: 09–17" },
-        location: { label: "Location", value: "Norway" },
+        location: { label: "Location", value: "Bergen, Norway" },
       },
     },
     footer: {
