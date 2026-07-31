@@ -173,8 +173,8 @@ export default function HomePage() {
             {tr.features.items.map((item, i) => {
               const Icon = iconMap[item.icon as keyof typeof iconMap] ?? Shirt;
               return (
-                <AnimatedSection key={i} delay={i * 0.1}>
-                  <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-[#F8F7F4] hover:bg-[#EEF2FF] transition-colors group">
+                <AnimatedSection key={i} delay={i * 0.1} className="h-full">
+                  <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-[#F8F7F4] hover:bg-[#EEF2FF] transition-colors group h-full">
                     <div className="w-14 h-14 bg-[#0F1F4B] rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] transition-colors">
                       <Icon size={26} className="text-white" />
                     </div>
