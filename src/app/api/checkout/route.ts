@@ -2,10 +2,6 @@ import Stripe from "stripe";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-07-29.dahlia",
-});
-
 const itemSchema = z.object({
   name:     z.string(),
   price:    z.number().positive(),
@@ -23,6 +19,10 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { items, lang } = bodySchema.parse(body);
+
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+      apiVersion: "2026-07-29.dahlia",
+    });
 
     const base = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3001";
 
