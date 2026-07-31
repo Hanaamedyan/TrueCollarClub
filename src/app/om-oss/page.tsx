@@ -41,9 +41,6 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-sm font-bold mb-6">
-              {tr.about.badge}
-            </span>
             <h1
               className="text-5xl md:text-6xl font-black leading-tight mb-6"
               style={{ fontFamily: "Montserrat, sans-serif" }}
