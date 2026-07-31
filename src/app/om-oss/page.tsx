@@ -33,7 +33,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-[#0F1F4B] text-white">
+      <section className="pt-24 md:pt-32 pb-10 md:pb-20 bg-[#0F1F4B] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -42,7 +42,7 @@ export default function AboutPage() {
             className="max-w-3xl"
           >
             <h1
-              className="text-5xl md:text-6xl font-black leading-tight mb-6"
+              className="text-3xl sm:text-5xl md:text-6xl font-black leading-tight mb-4"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               {tr.about.title.split("\n").map((line, i) => (
@@ -51,7 +51,7 @@ export default function AboutPage() {
                 </span>
               ))}
             </h1>
-            <p className="text-white/70 text-xl leading-relaxed max-w-2xl">
+            <p className="text-white/70 text-base sm:text-xl leading-relaxed max-w-2xl">
               {tr.about.text1}
             </p>
           </motion.div>
@@ -59,9 +59,9 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="py-24 bg-white">
+      <section className="py-12 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <AnimatedSection direction="right">
               <h2 className="section-title mb-6">
                 {lang === "NO" ? "Vår fortelling" : "Our story"}
@@ -105,9 +105,9 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-24 bg-[#F8F7F4]">
+      <section className="py-12 md:py-24 bg-[#F8F7F4]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-10 md:mb-16">
             <h2 className="section-title mb-4">
               {lang === "NO" ? "Vår reise" : "Our journey"}
             </h2>
@@ -139,9 +139,9 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-24 bg-white">
+      <section className="py-12 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-10 md:mb-16">
             <h2 className="section-title mb-4">
               {lang === "NO" ? "Menneskene bak" : "The people behind"}
             </h2>

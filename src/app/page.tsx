@@ -26,8 +26,8 @@ export default function HomePage() {
           <div className="absolute top-1/3 left-1/2 w-[300px] h-[300px] rounded-full bg-[#F59E0B]/10" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* Text */}
             <div>
               <motion.div
@@ -35,8 +35,8 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#0F1F4B]/10 text-[#0F1F4B] rounded-full text-sm font-bold mb-6">
-                  <span className="w-2 h-2 bg-[#F59E0B] rounded-full animate-pulse" />
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#0F1F4B]/10 text-[#0F1F4B] rounded-full text-xs sm:text-sm font-bold mb-5">
+                  <span className="w-2 h-2 bg-[#F59E0B] rounded-full animate-pulse shrink-0" />
                   {tr.hero.badge}
                 </span>
               </motion.div>
@@ -45,7 +45,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] text-[#0F1F4B] mb-6"
+                className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.05] text-[#0F1F4B] mb-5"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 {tr.hero.title.split("\n").map((line, i) => (
@@ -59,7 +59,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg text-gray-600 max-w-md mb-8 leading-relaxed"
+                className="text-base sm:text-lg text-gray-600 max-w-md mb-7 leading-relaxed"
               >
                 {tr.hero.subtitle}
               </motion.p>
@@ -68,13 +68,13 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-col sm:flex-row gap-3"
               >
-                <Link href="/butikk" className="btn-primary text-base px-8 py-4">
+                <Link href="/butikk" className="btn-primary text-base px-6 py-3.5 sm:px-8 sm:py-4 justify-center">
                   {tr.hero.cta_shop}
                   <ArrowRight size={18} />
                 </Link>
-                <Link href="/om-oss" className="btn-outline text-base px-8 py-4">
+                <Link href="/om-oss" className="btn-outline text-base px-6 py-3.5 sm:px-8 sm:py-4 justify-center">
                   {tr.hero.cta_about}
                 </Link>
               </motion.div>
@@ -84,7 +84,7 @@ export default function HomePage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex gap-8 mt-12"
+                className="flex gap-8 mt-10"
               >
                 {[
                   { num: "100%", label: lang === "NO" ? "Norsk kvalitet" : "Norwegian quality" },
@@ -99,7 +99,7 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Visual */}
+            {/* Visual — desktop only */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -107,21 +107,14 @@ export default function HomePage() {
               className="relative hidden lg:flex items-center justify-center"
             >
               <div className="relative w-[420px] h-[420px]">
-                {/* Main circle */}
                 <div className="absolute inset-0 bg-[#0F1F4B] rounded-full flex items-center justify-center shadow-[0_20px_60px_rgba(15,31,75,0.3)]">
                   <div className="text-center">
-                    <p
-                      className="text-white font-black text-6xl tracking-widest"
-                      style={{ fontFamily: "Montserrat, sans-serif" }}
-                    >
+                    <p className="text-white font-black text-6xl tracking-widest" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       TCC
                     </p>
-                    <p className="text-white/60 text-sm tracking-[0.3em] mt-1 uppercase">
-                      True Collar Club
-                    </p>
+                    <p className="text-white/60 text-sm tracking-[0.3em] mt-1 uppercase">True Collar Club</p>
                   </div>
                 </div>
-                {/* Floating card */}
                 <motion.div
                   animate={{ y: [0, -12, 0] }}
                   transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
@@ -135,7 +128,6 @@ export default function HomePage() {
                     <p className="text-xs text-gray-500">★★★★★</p>
                   </div>
                 </motion.div>
-                {/* Floating badge 2 */}
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
@@ -150,11 +142,11 @@ export default function HomePage() {
 
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
         >
-          <span className="text-xs text-gray-400 font-medium tracking-widest uppercase">
+          <span className="text-xs text-gray-400 font-medium tracking-widest uppercase hidden sm:block">
             {tr.hero.scroll}
           </span>
           <ChevronDown size={20} className="text-gray-400" />
@@ -162,29 +154,26 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-10 md:mb-16">
             <h2 className="section-title mb-4">{tr.features.title}</h2>
             <div className="w-16 h-1 bg-[#F59E0B] mx-auto rounded-full" />
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {tr.features.items.map((item, i) => {
               const Icon = iconMap[item.icon as keyof typeof iconMap] ?? Shirt;
               return (
                 <AnimatedSection key={i} delay={i * 0.1} className="h-full">
-                  <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-[#F8F7F4] hover:bg-[#EEF2FF] transition-colors group h-full">
-                    <div className="w-14 h-14 bg-[#0F1F4B] rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] transition-colors">
-                      <Icon size={26} className="text-white" />
+                  <div className="flex flex-col items-center text-center p-4 md:p-6 rounded-2xl bg-[#F8F7F4] hover:bg-[#EEF2FF] transition-colors group h-full">
+                    <div className="w-11 h-11 md:w-14 md:h-14 bg-[#0F1F4B] rounded-2xl flex items-center justify-center mb-3 md:mb-4 group-hover:bg-[#1E3A8A] transition-colors">
+                      <Icon size={22} className="text-white" />
                     </div>
-                    <h3
-                      className="font-black text-[#0F1F4B] mb-2"
-                      style={{ fontFamily: "Montserrat, sans-serif" }}
-                    >
+                    <h3 className="font-black text-[#0F1F4B] mb-1.5 text-sm md:text-base" style={{ fontFamily: "Montserrat, sans-serif" }}>
                       {item.title}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{item.text}</p>
+                    <p className="text-gray-500 text-xs md:text-sm leading-relaxed">{item.text}</p>
                   </div>
                 </AnimatedSection>
               );
@@ -194,14 +183,14 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURED PRODUCTS ── */}
-      <section className="py-24 bg-[#F8F7F4]">
+      <section className="py-16 md:py-24 bg-[#F8F7F4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-10 md:mb-16">
             <h2 className="section-title mb-3">{tr.featured.title}</h2>
-            <p className="text-gray-500 text-lg">{tr.featured.subtitle}</p>
+            <p className="text-gray-500 text-base md:text-lg">{tr.featured.subtitle}</p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {featured.map((product, i) => (
               <AnimatedSection key={product.id} delay={i * 0.1}>
                 <ProductCard product={product} />
@@ -209,7 +198,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <AnimatedSection className="text-center mt-12">
+          <AnimatedSection className="text-center mt-10 md:mt-12">
             <Link href="/butikk" className="btn-outline inline-flex items-center gap-2">
               {tr.featured.viewAll}
               <ArrowRight size={18} />
@@ -219,15 +208,15 @@ export default function HomePage() {
       </section>
 
       {/* ── ABOUT TEASER ── */}
-      <section className="py-24 bg-[#0F1F4B] text-white overflow-hidden">
+      <section className="py-16 md:py-24 bg-[#0F1F4B] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <AnimatedSection direction="right">
-              <span className="inline-block px-4 py-2 bg-white/10 text-white/80 rounded-full text-sm font-bold mb-6">
+              <span className="inline-block px-4 py-2 bg-white/10 text-white/80 rounded-full text-sm font-bold mb-5">
                 {tr.about.badge}
               </span>
               <h2
-                className="text-4xl md:text-5xl font-black text-white leading-tight mb-6"
+                className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight mb-5"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
                 {tr.about.title.split("\n").map((line, i) => (
@@ -236,29 +225,26 @@ export default function HomePage() {
                   </span>
                 ))}
               </h2>
-              <p className="text-white/70 text-lg leading-relaxed mb-6">{tr.about.text1}</p>
-              <p className="text-white/70 leading-relaxed mb-8">{tr.about.text2}</p>
-              <Link href="/om-oss" className="btn-gold inline-flex items-center gap-2">
+              <p className="text-white/70 text-base md:text-lg leading-relaxed mb-4">{tr.about.text1}</p>
+              <p className="text-white/70 leading-relaxed mb-7">{tr.about.text2}</p>
+              <Link href="/om-oss" className="btn-gold inline-flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">
                 {tr.about.cta}
                 <ArrowRight size={18} />
               </Link>
             </AnimatedSection>
 
             <AnimatedSection direction="left">
-              <div className="grid grid-cols-1 gap-4">
+              <div className="grid grid-cols-1 gap-3">
                 {tr.about.values.map((v, i) => (
                   <div
                     key={i}
-                    className="flex gap-4 items-start bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-5"
+                    className="flex gap-4 items-start bg-white/5 hover:bg-white/10 transition-colors rounded-2xl p-4 md:p-5"
                   >
                     <div className="w-8 h-8 bg-[#F59E0B] rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
                       <span className="text-[#0F1F4B] font-black text-sm">{i + 1}</span>
                     </div>
                     <div>
-                      <h4
-                        className="font-bold text-white mb-1"
-                        style={{ fontFamily: "Montserrat, sans-serif" }}
-                      >
+                      <h4 className="font-bold text-white mb-1" style={{ fontFamily: "Montserrat, sans-serif" }}>
                         {v.title}
                       </h4>
                       <p className="text-white/60 text-sm">{v.text}</p>
@@ -272,18 +258,17 @@ export default function HomePage() {
       </section>
 
       {/* ── INSTAGRAM ── */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-12">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <InstagramIcon size={28} className="text-[#0F1F4B]" />
+          <AnimatedSection className="text-center mb-8 md:mb-12">
+            <div className="flex items-center justify-center gap-2 mb-3">
+              <InstagramIcon size={24} className="text-[#0F1F4B]" />
               <h2 className="section-title">{tr.instagram.title}</h2>
             </div>
-            <p className="text-gray-500 text-lg">{tr.instagram.subtitle}</p>
+            <p className="text-gray-500 text-base md:text-lg">{tr.instagram.subtitle}</p>
           </AnimatedSection>
 
-          {/* Instagram grid placeholder */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
+          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mb-8">
             {Array.from({ length: 6 }).map((_, i) => (
               <AnimatedSection key={i} delay={i * 0.05}>
                 <div
@@ -293,7 +278,7 @@ export default function HomePage() {
                   }}
                 >
                   <div className="w-full h-full flex items-center justify-center text-white/30">
-                    <InstagramIcon size={28} />
+                    <InstagramIcon size={20} />
                   </div>
                 </div>
               </AnimatedSection>
@@ -316,4 +301,3 @@ export default function HomePage() {
     </>
   );
 }
-

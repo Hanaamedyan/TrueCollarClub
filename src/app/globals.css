@@ -141,3 +141,17 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(15,31,75,0.15);
 }
+
+/* Hide scrollbar but keep scroll functionality (for mobile filter row) */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Improve tap targets on mobile */
+@media (max-width: 640px) {
+  .btn-primary, .btn-outline, .btn-gold {
+    min-height: 48px;
+  }
+  .card-hover:hover {
+    transform: none;
+  }
+}
