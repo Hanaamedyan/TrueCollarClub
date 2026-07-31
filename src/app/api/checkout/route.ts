@@ -1,6 +1,8 @@
-import Stripe from "stripe";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+
+// Prevents Next.js from evaluating this route at build time
+export const dynamic = "force-dynamic";
 
 const itemSchema = z.object({
   name:     z.string(),
@@ -17,12 +19,17 @@ const bodySchema = z.object({
 
 export async function POST(req: NextRequest) {
   try {
+    const key = process.env.STRIPE_SECRET_KEY;
+    if (!key) {
+      return NextResponse.json({ error: "Stripe not configured" }, { status: 500 });
+    }
+
+    // Dynamic import keeps Stripe out of the build-time module graph
+    const { default: Stripe } = await import("stripe");
+    const stripe = new Stripe(key, { apiVersion: "2026-07-29.dahlia" });
+
     const body = await req.json();
     const { items, lang } = bodySchema.parse(body);
-
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-      apiVersion: "2026-07-29.dahlia",
-    });
 
     const base = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3001";
 
@@ -46,9 +53,7 @@ export async function POST(req: NextRequest) {
       },
       success_url: `${base}/ordre/suksess?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url:  `${base}/ordre/avbrutt`,
-      metadata: {
-        source: "truecollarclub-web",
-      },
+      metadata: { source: "truecollarclub-web" },
     });
 
     return NextResponse.json({ url: session.url });
