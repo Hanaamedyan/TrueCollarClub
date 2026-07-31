@@ -87,7 +87,6 @@ export default function HomePage() {
                 className="flex gap-8 mt-12"
               >
                 {[
-                  { num: "6", label: lang === "NO" ? "Produkter" : "Products" },
                   { num: "100%", label: lang === "NO" ? "Norsk kvalitet" : "Norwegian quality" },
                 ].map((stat) => (
                   <div key={stat.label}>
