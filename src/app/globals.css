@@ -1,26 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Navy color scale */
+  --color-navy-50:  #EEF2FF;
+  --color-navy-100: #E0E7FF;
+  --color-navy-200: #C7D2FE;
+  --color-navy-300: #A5B4FC;
+  --color-navy-400: #6B7EBD;
+  --color-navy-500: #1E3A8A;
+  --color-navy-600: #1B3280;
+  --color-navy-700: #162969;
+  --color-navy-800: #0F1F4B;
+  --color-navy-900: #0A1430;
+  --color-navy-950: #060D1E;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Brand extras */
+  --color-cream:    #F8F7F4;
+  --color-gold:     #F59E0B;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Fonts */
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-display: "Montserrat", system-ui, sans-serif;
+
+  /* Animations */
+  --animate-fade-up:    fadeUp 0.6s ease-out forwards;
+  --animate-fade-in:    fadeIn 0.5s ease-out forwards;
+  --animate-slide-left: slideLeft 0.6s ease-out forwards;
+  --animate-float:      float 3s ease-in-out infinite;
+
+  /* Keyframes */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
   }
 }
 
+
+html { scroll-behavior: smooth; }
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #0F1F4B;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #f1f1f1; }
+::-webkit-scrollbar-thumb  { background: #1E3A8A; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0F1F4B; }
+
+/* Utility classes */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #0F1F4B;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 24px rgba(15,31,75,0.18);
+}
+.btn-primary:hover {
+  background: #162969;
+  box-shadow: 0 8px 48px rgba(15,31,75,0.24);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #0F1F4B;
+  color: #0F1F4B;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  background: transparent;
+}
+.btn-outline:hover {
+  background: #0F1F4B;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #F59E0B;
+  color: #0F1F4B;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(245,158,11,0.3);
+}
+.btn-gold:hover {
+  background: #D97706;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245,158,11,0.4);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 900;
+  color: #0F1F4B;
+  line-height: 1.2;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15,31,75,0.15);
 }
