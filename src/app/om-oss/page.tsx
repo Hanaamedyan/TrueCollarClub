@@ -70,16 +70,14 @@ export default function AboutPage() {
               <p className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">{tr.about.text1}</p>
               <p className="text-gray-600 leading-relaxed mb-8 text-sm sm:text-base">{tr.about.text2}</p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
                 {tr.about.values.map((v, i) => (
-                  <div key={i} className="flex flex-row sm:flex-col gap-3 p-4 bg-[#F8F7F4] rounded-xl items-start">
-                    <CheckCircle size={20} className="text-[#F59E0B] shrink-0 mt-0.5 sm:mt-0" fill="currentColor" />
-                    <div>
-                      <h4 className="font-bold text-[#0F1F4B] text-sm mb-0.5" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                        {v.title}
-                      </h4>
-                      <p className="text-gray-500 text-xs leading-relaxed">{v.text}</p>
-                    </div>
+                  <div key={i} className="flex flex-col gap-2 p-3 sm:p-4 bg-[#F8F7F4] rounded-xl">
+                    <CheckCircle size={18} className="text-[#F59E0B] shrink-0" />
+                    <h4 className="font-bold text-[#0F1F4B] text-xs sm:text-sm leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                      {v.title}
+                    </h4>
+                    <p className="text-gray-500 text-xs leading-relaxed hidden sm:block">{v.text}</p>
                   </div>
                 ))}
               </div>
