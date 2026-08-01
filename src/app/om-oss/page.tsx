@@ -176,7 +176,7 @@ export default function AboutPage() {
 
           <div className="flex flex-wrap items-stretch justify-center gap-6">
             {team.map((member, i) => (
-              <AnimatedSection key={i} delay={i * 0.15}>
+              <AnimatedSection key={i} delay={i * 0.15} className="flex">
                 <TeamCard
                   name={member.name}
                   role={member.role}

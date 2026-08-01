@@ -9,7 +9,7 @@ type Props = {
 
 export default function TeamCard({ name, role, quote, image }: Props) {
   return (
-    <div style={{ width: "288px" }} className="bg-[#0F1F4B] text-white rounded-2xl flex-shrink-0">
+    <div style={{ width: "288px" }} className="bg-[#0F1F4B] text-white rounded-2xl flex-shrink-0 flex flex-col h-full">
       <div className="relative overflow-hidden rounded-2xl">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -19,8 +19,8 @@ export default function TeamCard({ name, role, quote, image }: Props) {
         />
         <div className="absolute bottom-0 z-10 h-60 w-full bg-gradient-to-t pointer-events-none from-[#0F1F4B] to-transparent" />
       </div>
-      <div className="px-4 pb-5">
-        <p className="font-medium border-b border-white/20 pb-4 text-sm leading-relaxed text-white/80">
+      <div className="px-4 pb-5 flex flex-col flex-1">
+        <p className="font-medium border-b border-white/20 pb-4 text-sm leading-relaxed text-white/80 flex-1">
           &ldquo;{quote}&rdquo;
         </p>
         <p className="mt-4 font-bold text-white">— {name}</p>
