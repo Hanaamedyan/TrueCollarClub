@@ -227,7 +227,7 @@ export default function HomePage() {
               </h2>
               <p className="text-white/70 text-base md:text-lg leading-relaxed mb-4">{tr.about.text1}</p>
               <p className="text-white/70 leading-relaxed mb-7">{tr.about.text2}</p>
-              <Link href="/om-oss" className="btn-gold inline-flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">
+              <Link href="/butikk" className="btn-gold inline-flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">
                 {tr.about.cta}
                 <ArrowRight size={18} />
               </Link>
