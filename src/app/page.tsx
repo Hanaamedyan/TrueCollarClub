@@ -30,17 +30,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             {/* Text */}
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#0F1F4B]/10 text-[#0F1F4B] rounded-full text-xs sm:text-sm font-bold mb-5">
-                  <span className="w-2 h-2 bg-[#F59E0B] rounded-full animate-pulse shrink-0" />
-                  {tr.hero.badge}
-                </span>
-              </motion.div>
-
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
