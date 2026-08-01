@@ -1,7 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-
 type Props = {
   name: string;
   role: string;
@@ -11,8 +9,9 @@ type Props = {
 
 export default function TeamCard({ name, role, quote, image }: Props) {
   return (
-    <div className={cn("w-72 bg-[#0F1F4B] text-white rounded-2xl flex-shrink-0")}>
-      <div className="relative -mt-px overflow-hidden rounded-2xl">
+    <div style={{ width: "288px" }} className="bg-[#0F1F4B] text-white rounded-2xl flex-shrink-0">
+      <div className="relative overflow-hidden rounded-2xl">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={image}
           alt={name}
@@ -25,7 +24,15 @@ export default function TeamCard({ name, role, quote, image }: Props) {
           &ldquo;{quote}&rdquo;
         </p>
         <p className="mt-4 font-bold text-white">— {name}</p>
-        <p className="text-sm font-semibold bg-gradient-to-r from-[#F59E0B] via-[#FBBF24] to-[#F59E0B] text-transparent bg-clip-text">
+        <p
+          className="text-sm font-semibold"
+          style={{
+            background: "linear-gradient(90deg, #F59E0B, #FBBF24, #F59E0B)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
           {role}
         </p>
       </div>
