@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLang } from "@/context/LanguageContext";
 import AnimatedSection from "@/components/AnimatedSection";
+import TeamCard from "@/components/TeamCard";
 
 export default function AboutPage() {
   const { tr, lang } = useLang();
@@ -24,9 +25,30 @@ export default function AboutPage() {
       ];
 
   const team = [
-    { name: "Alex", role: lang === "NO" ? "Grunnlegger & Design" : "Founder & Design" },
-    { name: "Sam", role: lang === "NO" ? "Produktutvikling" : "Product Development" },
-    { name: "Mia", role: lang === "NO" ? "Kundeservice" : "Customer Service" },
+    {
+      name: "Alex",
+      role: lang === "NO" ? "Grunnlegger & Design" : "Founder & Design",
+      quote: lang === "NO"
+        ? "Vi laget TCC fordi vi selv savnet klær som virkelig sa noe om hvem vi er."
+        : "We created TCC because we wanted clothes that actually said something about who we are.",
+      image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=600",
+    },
+    {
+      name: "Sam",
+      role: lang === "NO" ? "Produktutvikling" : "Product Development",
+      quote: lang === "NO"
+        ? "Hvert plagg testes grundig — det skal sitte perfekt etter tolv timers skift."
+        : "Every garment is tested thoroughly — it has to fit perfectly after a twelve-hour shift.",
+      image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=600",
+    },
+    {
+      name: "Mia",
+      role: lang === "NO" ? "Kundeservice" : "Customer Service",
+      quote: lang === "NO"
+        ? "Fornøyde kunder er alt. Jeg svarer alltid personlig og raskt."
+        : "Happy customers are everything. I always respond personally and quickly.",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=600&h=600&auto=format&fit=crop",
+    },
   ];
 
   return (
@@ -145,29 +167,22 @@ export default function AboutPage() {
 
       {/* ── TEAM ── */}
       <section className="py-12 md:py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-10">
             <h2 className="section-title mb-4">
               {lang === "NO" ? "Menneskene bak" : "The people behind"}
             </h2>
           </AnimatedSection>
 
-          {/* 3 columns on all screens — avatars scale down gracefully */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8">
+          <div className="flex flex-wrap items-stretch justify-center gap-6">
             {team.map((member, i) => (
               <AnimatedSection key={i} delay={i * 0.15}>
-                <div className="text-center">
-                  <div
-                    className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mx-auto mb-3 flex items-center justify-center text-white text-xl sm:text-2xl font-black shadow-[0_4px_24px_rgba(15,31,75,0.18)]"
-                    style={{ background: "linear-gradient(135deg, #0F1F4B, #1E3A8A)", fontFamily: "Montserrat, sans-serif" }}
-                  >
-                    {member.name[0]}
-                  </div>
-                  <h3 className="font-black text-[#0F1F4B] text-sm sm:text-base" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                    {member.name}
-                  </h3>
-                  <p className="text-gray-500 text-xs sm:text-sm mt-0.5 leading-tight">{member.role}</p>
-                </div>
+                <TeamCard
+                  name={member.name}
+                  role={member.role}
+                  quote={member.quote}
+                  image={member.image}
+                />
               </AnimatedSection>
             ))}
           </div>
