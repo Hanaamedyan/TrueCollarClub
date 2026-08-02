@@ -168,11 +168,6 @@ export default function AboutPage() {
       {/* ── TEAM ── */}
       <section className="py-12 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-10">
-            <h2 className="section-title mb-4">
-              {lang === "NO" ? "Menneskene bak" : "The people behind"}
-            </h2>
-          </AnimatedSection>
 
           <div className="flex flex-wrap items-stretch justify-center gap-6">
             {team.map((member, i) => (
