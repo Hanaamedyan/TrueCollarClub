@@ -251,7 +251,6 @@ export default function HomePage() {
               <InstagramIcon size={24} className="text-[#0F1F4B]" />
               <h2 className="section-title">{tr.instagram.title}</h2>
             </div>
-            <p className="text-gray-500 text-base md:text-lg">{tr.instagram.subtitle}</p>
           </AnimatedSection>
 
           <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3 mb-8">
